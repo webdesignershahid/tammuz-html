@@ -1,0 +1,51 @@
+/*--------------------------------------------------------------
+    [ ## Footer Start ]
+--------------------------------------------------------------*/
+footer {
+    // background-color: #10110c;
+    position: relative;
+    background-color: #10110c;
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-position: center;
+
+
+    .footer__bottom {
+        padding: 1rem 0 2rem;
+        .footer__inner {
+            padding: 1.5rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: #1a9120;
+            border-radius: 4px;
+            
+        }
+        p {
+            color: white;
+        }
+
+        .social {
+            display: flex;
+            gap: 1rem;
+            a {
+                width: 4rem;
+                height: 4rem;
+                background-color: white;
+                border-radius: 50%;
+                display: grid;
+                place-content: center;
+                transition: all .2s;
+
+                &:hover {
+                    background-color: #10110c;
+                    color: white;
+                }
+            }
+        }
+    }
+
+}
+/*--------------------------------------------------------------
+    [ ## Footer End]
+--------------------------------------------------------------*/

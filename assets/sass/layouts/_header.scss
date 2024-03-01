@@ -1,0 +1,122 @@
+/*--------------------------------------------------------------
+    [ ## Header  Start]
+--------------------------------------------------------------*/
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1024;
+    transition: all 0.3s ease;
+    padding: 1rem 0;
+    background-color: var(--color__white);
+    box-shadow: 0 0 .8rem rgba(#000, .1);
+    @include lg-up {
+        padding: 2rem 0;
+    }
+    .site-logo {
+        max-width: 20rem;
+        @include lg-up {
+            max-width: 25rem;
+        }
+    }
+    .menu-wrapper {
+        @include lg-down {
+            display: none;
+        }
+        .main-menu {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            
+            a {
+                padding: .8rem 1.5rem;
+                display: block;
+                font-weight: 500;
+                transition: all .2s ease;
+                &:hover {
+                    color: var(--color__theme);
+
+                }
+            }
+        }
+        .menu-item-has-submenu {
+            position: relative;
+            .sub-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 24rem;
+                padding: 1rem;
+                box-shadow: 0 0 .5rem rgba(#000, .1);
+                border-radius: .5rem;
+                transform: translateY(1rem);
+                transition: all .2s ease-in-out;
+                opacity: 0;
+                visibility: hidden;
+                a {
+                    transition: all .2s;
+                    padding: 1rem;
+                    &:hover {
+                        background-color: rgba(#000, .05);
+                    }
+                }
+            }
+            &:hover {
+                .sub-menu {
+                    opacity: 1;
+                    visibility: visible;
+                    transform: translateY(0);
+
+                }
+            }
+        }
+    }
+    .alt-menu {
+        display: flex;
+        gap: 1rem;
+        margin-left: 3rem;
+
+        .contact-btn {
+            width: 5rem;
+            height: 5rem;
+            border-radius: 50%;
+            background-color: var(--color__theme);
+            display: grid;
+            place-content: center;
+            color: var(--color__white);
+        }
+    }
+    .menu-toggler {
+        width: 5rem;
+        height: 5rem;
+        border-radius: 50%;
+        background-color: var(--color__white);
+        display: grid;
+        place-content: center;
+        color: var(--color__theme);
+        border: .1rem solid var(--color__black);
+        @include lg-up {
+            display: none;
+        }
+    }
+}
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    height: 100%;
+    left: -36rem;
+    width: 35rem;
+    padding: 1rem;
+    background-color: var(--color__white);
+    box-shadow: 0 0 .6rem rgba(#000, .1);
+    transition: all .2s ease-in-out;
+
+    &.is-menu-open {
+        left: 0;
+    }
+    
+}
+/*--------------------------------------------------------------
+    [ ## Header  End]
+--------------------------------------------------------------*/

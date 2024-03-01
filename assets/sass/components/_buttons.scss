@@ -1,0 +1,56 @@
+.topbutton {
+    position: fixed;
+    right: 2rem;
+    bottom: 4rem;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 1rem;
+    @include flex-center;
+    color: var(--color__white);
+    z-index: 1024;
+    background-color: var(--color__theme);
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        color: var(--color__white);
+    }
+}
+
+.btn__secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+    color: white;
+    font-size: 1.5rem;
+    border: .1rem solid var(--color__secondary);
+    background-color: var(--color__secondary);
+    font-weight: 600;
+    padding: 1.8rem 4rem;
+    border-radius: 5rem;
+    transition: all .2s ease-in-out;
+
+    &:hover {
+        background-color: var(--color__theme);
+        border-color: var(--color__theme);
+        color: white;
+    }
+}
+.btn__secondary__alt {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+    color: white;
+    font-size: 1.5rem;
+    border: .1rem solid var(--color__white);
+    background-color: transparent;
+    font-weight: 600;
+    padding: 1.8rem 4rem;
+    border-radius: 5rem;
+    transition: all .2s ease-in-out;
+
+    &:hover {
+        background-color: var(--color__white);
+        border-color: var(--color__white);
+        color: var(--color__theme);
+    }
+}
