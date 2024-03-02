@@ -1,3 +1,3 @@
 #Project Live Link:
 
-https://www.tammuz-html.netlify.app
+https://tammuz-html.netlify.app/
