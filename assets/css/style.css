@@ -263,7 +263,12 @@ h4 a:hover {
 
 .breadcrumb {
   margin: 0;
+  justify-content: center;
 }
+.breadcrumb .breadcrumb-item {
+  color: white;
+}
+
 .topbutton {
   position: fixed;
   right: 2rem;
@@ -694,6 +699,31 @@ select:-webkit-autofill:focus {
 /*--------------------------------------------------------------
     [ ## Header  End]
 --------------------------------------------------------------*/
+.page__banner {
+  position: relative;
+  background-color: #10110c;
+  background-blend-mode: overlay;
+  background-size: cover;
+  background-position: center;
+}
+.page__banner .banner__content {
+  padding: 10rem 0;
+  text-align: center;
+}
+.page__banner .banner__content h1 {
+  color: white;
+  font-size: 3rem;
+  font-weight: 700;
+}
+@media screen and (min-width: 768px) {
+  .page__banner .banner__content h1 {
+    font-size: 4rem;
+  }
+}
+.page__banner .banner__content .breadcrumb {
+  margin-top: 2rem;
+}
+
 main {
   margin-top: 8rem;
 }

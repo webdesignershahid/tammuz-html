@@ -1,0 +1,24 @@
+.page__banner {
+    position: relative;
+    background-color: #10110c;
+    background-blend-mode: overlay;
+    background-size: cover;
+    background-position: center;
+
+    .banner__content {
+        padding: 10rem 0;
+        text-align: center;
+
+        h1 {
+            color: white;
+            font-size: 3rem;
+            font-weight: 700;
+            @include md-up {
+                font-size: 4rem;
+            }
+        }
+        .breadcrumb {
+            margin-top: 2rem;
+        }
+    }
+}
