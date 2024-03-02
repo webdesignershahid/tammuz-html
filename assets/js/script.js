@@ -80,9 +80,9 @@
         slidesPerView: 1.2,
         loop: 1,
         speed: 800,
-        // autoplay:{
-        //     delay: 3000,
-        // }, 
+        autoplay:{
+            delay: 3000,
+        }, 
         spaceBetween: 10,
 		pagination: {
 			el: ".works__pagination",
@@ -135,6 +135,21 @@
             prevEl: '.video__wrapper .slide__prev',
           }
     });
+    var serviceGalleryBlock = new Swiper('.gallery__block.swiper', {
+        slidesPerView: 2,
+        loop: 1,
+        speed: 1000,
+        spaceBetween: 50,
+        speed: 800,
+        autoplay:{
+            delay: 3000,
+        }, 
+		breakpoints: {
+			768: {
+				slidesPerView: 3,
+			},
+		}
+    });
 
     /* ============================================================ */
     /* Scroll Top
@@ -158,6 +173,14 @@
             'normal'
         );
         return false;
+    });
+
+
+    /* ============================================================ */
+    /* Glightbox
+    /* ============================================================ */
+    const lightbox = GLightbox({
+
     });
 
     

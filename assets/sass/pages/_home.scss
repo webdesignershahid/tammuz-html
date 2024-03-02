@@ -204,6 +204,9 @@ main {
     padding: 10rem 0;
     background-color: rgba(#055300, .05);
 
+    .section__gap {
+        padding: 6rem 0;
+    }
     .service__card {
         background-color: var(--color__white);
         padding: 2rem;
@@ -262,6 +265,67 @@ main {
             .service__bg {
                 opacity: 1;
             }
+        }
+    }
+}
+.service__details {
+    padding: 10rem 0;
+    overflow: hidden;
+    .row:not(.gallery__block) {
+        @include lg-up {
+            --bs-gutter-x: 5rem;
+        }
+        @include xl-up {
+            --bs-gutter-x: 10rem;
+        }
+
+        & + .row {
+            margin-top: 10rem;
+        }
+    }
+    .section__content {
+        .title {
+            font-size: 4.6rem;
+            font-weight: 600;
+            max-width: 55rem;
+            margin-bottom: 2rem;
+            line-height: 1.3;
+            @include md-down {
+                font-size: 3.6rem;
+            }
+        }
+        .list-disc {
+            list-style-type: disc;
+            margin-left: 1.8rem;
+
+            li {
+                margin: .8rem 0;
+            }
+            a {
+                &:hover {
+                    text-decoration: underline;
+                    text-underline-offset: .3rem;
+                }
+            }
+        }
+
+        p + p {
+            margin-top: 2.5rem;
+        }
+    }
+    .section__image {
+        @include lg-down {
+            margin-bottom: 2rem;
+        }
+    }
+
+    .gallery__block {
+        margin-top: 12rem;
+        img {
+            max-height: 35rem;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
         }
     }
 }
@@ -355,6 +419,163 @@ main {
             background-color: var(--color__theme);
             @include width-height(1rem, 1rem);
             margin: 0 .5rem;
+        }
+    }
+}
+.our__projects {
+    padding: 10rem 0;
+
+    .project__item {
+        &.list {
+            -webkit-box-shadow: 0 .8rem 4rem rgba(0,0,0,.15);
+            box-shadow: 0 .8rem 4rem rgba(0,0,0,.15);
+            margin-bottom: 6rem;
+            overflow: hidden;
+            
+            @include lg-up {
+                display: flex;
+                flex-flow: row wrap;
+            }
+    
+            .thumbnail {
+                overflow: hidden;
+                @include lg-up {
+                    width: 50%;
+                    -webkit-flex-basis: 50%;
+                    -ms-flex-preferred-size: 50%;
+                    flex-basis: 50%;
+                }
+                @include xl-up {
+                    width: 40%;
+                    -webkit-flex-basis: 40%;
+                    -ms-flex-preferred-size: 40%;
+                    flex-basis: 40%;
+                }
+    
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: left;
+                    transition: all 0.25s ease;
+                    transform-origin: center;
+                }
+            }
+            .description {
+                margin: 3rem;
+                @include lg-up {
+                    width: calc(50% - 10rem);
+                    -webkit-flex-basis: calc(50% - 10rem);
+                    -ms-flex-preferred-size: calc(50% - 10rem);
+                    flex-basis: calc(50% - 10rem);
+                    margin: 4rem 5rem;
+                }
+                @include xl-up {
+                    width: calc(60% - 10rem);
+                    -webkit-flex-basis: calc(60% - 10rem);
+                    -ms-flex-preferred-size: calc(60% - 10rem);
+                    flex-basis: calc(60% - 10rem);
+                }
+            }
+            .subtitle {
+                font-weight: 600;
+                opacity: .5;
+                margin-bottom: .8rem;
+                letter-spacing: .1rem;
+            }
+            .title {
+                font-size: 4.6rem;
+                font-weight: 600;
+                max-width: 55rem;
+                margin-bottom: 2rem;
+                line-height: 1.3;
+                @include md-down {
+                    font-size: 3rem;
+                }
+            }
+            p {
+                @include md-down {
+                    line-height: 1.6;
+                }
+            }
+            .readmore {
+                margin-top: 2rem;
+                @include md-up {
+                    margin-top: 5rem;
+
+                }
+    
+                a {
+                    font-weight: 700;
+                    color: var(--color__theme);
+                    letter-spacing: .1rem;
+                }
+            }
+
+            &:hover {
+                .thumbnail img {
+                    transform: scale(1.1);
+                }
+            }
+        }
+        &.grid {
+            -webkit-box-shadow: 0 .8rem 4rem rgba(0,0,0,.15);
+            box-shadow: 0 .8rem 4rem rgba(0,0,0,.15);
+            border-radius: 1rem;
+            overflow: hidden;
+            .thumbnail {
+                position: relative;
+                overflow: hidden;
+    
+                img {
+                    width: 100%;
+                    transition: all .25s ease;
+                    transform-origin: center;
+                }
+                .subtitle {
+                    position: absolute;
+                    top: 1.5rem;
+                    left: 1.5rem;
+                    background-color: rgba(#fff, .8);
+                    padding: 1.3rem 2rem;
+                    border-radius: 5rem;
+                    font-size: 1.3rem;
+                    line-height: 1;
+                }
+            }
+
+            .description {
+                padding: 2rem;
+                background-color: white;
+
+                @include lg-up {
+                    padding: 3rem;
+                }
+
+            }
+            .title {
+                font-size: 3rem;
+                margin-bottom: 1rem;
+            }
+            p {
+                display: -webkit-box;
+                -webkit-line-clamp: 3;
+                -webkit-box-orient: vertical;  
+                overflow: hidden;
+            }
+            .readmore {
+                margin-top: 2rem;    
+                a {
+                    font-weight: 700;
+                    color: var(--color__theme);
+                    letter-spacing: .1rem;
+                }
+            }
+            &:hover {
+                .thumbnail img {
+                    transform: scale(1.1);
+                }
+            }
         }
     }
 }

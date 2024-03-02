@@ -16,6 +16,31 @@
     }
 }
 
+.btn__primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.5rem;
+    color: white;
+    font-size: 1.5rem;
+    border: .1rem solid var(--color__theme);
+    background-color: var(--color__theme);
+    font-weight: 600;
+    line-height: normal;
+    padding: 1.8rem 4rem;
+    border-radius: 5rem;
+    transition: all .2s ease-in-out;
+
+    @include md-down {
+        gap: 1rem;
+        padding: 1.5rem 2.5rem;
+    }
+
+    &:hover {
+        background-color: var(--color__secondary);
+        border-color: var(--color__secondary);
+        color: white;
+    }
+}
 .btn__secondary {
     display: inline-flex;
     align-items: center;
@@ -25,6 +50,7 @@
     border: .1rem solid var(--color__secondary);
     background-color: var(--color__secondary);
     font-weight: 600;
+    line-height: normal;
     padding: 1.8rem 4rem;
     border-radius: 5rem;
     transition: all .2s ease-in-out;
@@ -46,6 +72,7 @@
     gap: 1.5rem;
     color: white;
     font-size: 1.5rem;
+    line-height: normal;
     border: .1rem solid var(--color__white);
     background-color: transparent;
     font-weight: 600;
