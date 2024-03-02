@@ -531,6 +531,7 @@ select:-webkit-autofill:focus {
   position: relative;
 }
 .header .menu-wrapper .menu-item-has-submenu .sub-menu {
+  background-color: var(--color__white);
   position: absolute;
   top: 100%;
   left: 0;
@@ -815,9 +816,23 @@ main {
 --------------------------------------------------------------*/
 .our__works {
   padding: 10rem 0;
+  background-color: #fff;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 100vh;
+}
+.our__works .swiper-wrapper {
+  align-items: flex-end;
+}
+.our__works .works__items {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  transition: all 0.3s ease;
 }
 .our__works .works__items .thumbnail {
   overflow: hidden;
+  position: relative;
 }
 .our__works .works__items .thumbnail img {
   height: 38rem;
@@ -837,6 +852,45 @@ main {
   font-size: 1.8rem;
   font-weight: 800;
 }
+.our__works .works__items::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1rem solid var(--color__secondary);
+  transition: all 0.5s ease-in-out;
+  z-index: -1;
+  transform-origin: left bottom;
+  opacity: 0;
+}
+.our__works .works__items::after {
+  content: "";
+  position: absolute;
+  top: -0.1rem;
+  right: -0.1rem;
+  border: 1.2rem solid #fff;
+  width: 30%;
+  height: 30%;
+  z-index: -1;
+  opacity: 0;
+  transition: width 0.5s height 0.5s ease;
+  transform-origin: top right;
+}
+.our__works .swiper-slide-active .works__items::before, .our__works .swiper-slide-active .works__items::after {
+  opacity: 1;
+}
+.our__works .swiper-slide-active .works__items::after {
+  width: 50%;
+  height: 50%;
+}
+.our__works .works__pagination {
+  margin-top: 2rem;
+}
+.our__works .works__pagination .swiper-pagination-bullet {
+  background-color: var(--color__theme);
+  width: 1rem;
+  height: 1rem;
+  margin: 0 0.5rem;
+}
 
 /*--------------------------------------------------------------
     [ About Section End ]
@@ -847,8 +901,16 @@ main {
 .video__promo {
   padding: 10rem 0;
 }
+.video__promo .video__wrapper {
+  padding: 0 5.5rem;
+}
 .video__promo .video__wrapper .swiper-slide {
   position: relative;
+  transition: all 0.3s;
+  opacity: 0;
+}
+.video__promo .video__wrapper .swiper-slide-active {
+  opacity: 1;
 }
 .video__promo .video__wrapper .swiper-slide::before {
   content: "";
@@ -863,7 +925,25 @@ main {
   background: #efefef;
 }
 .video__promo .video__wrapper .nav__controler {
-  position: relative;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  width: 5rem;
+  border: 0;
+  background: white;
+  height: 5rem;
+  display: grid;
+  place-content: center;
+  padding: 0;
+  box-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.3);
+  border-radius: 50%;
+}
+.video__promo .video__wrapper .nav__controler.slide__prev {
+  left: 2.6rem;
+}
+.video__promo .video__wrapper .nav__controler.slide__next {
+  right: 2.6rem;
 }
 
 /*--------------------------------------------------------------
@@ -875,13 +955,16 @@ main {
 .contact__section {
   padding: 10rem 0;
 }
+.contact__section .contacts__list {
+  margin-left: 5rem;
+}
 .contact__section .contacts__list li {
   display: flex;
   flex-wrap: wrap;
   gap: 2rem;
 }
 .contact__section .contacts__list li + li {
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 .contact__section .contacts__list li .icon {
   flex: 0 0 5rem;
@@ -931,28 +1014,62 @@ footer {
   background-size: cover;
   background-position: center;
 }
+footer .footer__top {
+  padding: 8rem 0 4rem;
+}
+footer .footer__top p {
+  color: #7a7a7a;
+  font-size: 1.4rem;
+}
+footer .footer__top .wiget__title {
+  color: #fff;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+footer .footer__top ul li {
+  color: #7a7a7a;
+  font-size: 1.4rem;
+}
+footer .footer__top ul li + li {
+  margin-top: 1.5rem;
+}
+footer .footer__top ul li a {
+  font-size: 1.4rem;
+  transition: all 0.2s;
+}
+footer .footer__top ul li a:hover {
+  color: white;
+}
+footer .footer__top .working_hrs li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 footer .footer__bottom {
-  padding: 1rem 0 2rem;
+  padding: 2rem 0;
 }
 footer .footer__bottom .footer__inner {
   padding: 1.5rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: #1a9120;
+  background-color: var(--color__theme);
   border-radius: 4px;
 }
 footer .footer__bottom p {
   color: white;
+  font-size: 1.4rem;
+  font-weight: 300;
 }
 footer .footer__bottom .social {
   display: flex;
   gap: 1rem;
 }
 footer .footer__bottom .social a {
+  font-size: 1.4rem;
   width: 4rem;
   height: 4rem;
-  background-color: white;
+  background-color: #d0e1f1;
   border-radius: 50%;
   display: grid;
   place-content: center;

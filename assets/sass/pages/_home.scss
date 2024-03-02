@@ -228,10 +228,21 @@ main {
 --------------------------------------------------------------*/
 .our__works {
     padding: 10rem 0;
-
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: 100vh;
+    .swiper-wrapper {
+        align-items: flex-end;
+    }
     .works__items {
+        position: relative;
+        z-index: 1;
+        padding: 2rem;
+        transition: all .3s ease;
         .thumbnail {
             overflow: hidden;
+            position: relative;
             img {
                 height: 38rem;
                 background-color: #eee;
@@ -251,6 +262,53 @@ main {
             font-size: 1.8rem;
             font-weight: 800;
         }
+
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1rem solid var(--color__secondary);
+            transition: all .5s ease-in-out;
+            z-index: -1;
+            transform-origin: left bottom;
+            opacity: 0;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            top: -.1rem;
+            right: -.1rem;
+            border: 1.2rem solid #fff;
+            width: 30%;
+            height: 30%;
+            z-index: -1;
+            opacity: 0;
+            transition: width .5s height .5s ease;
+            transform-origin: top right;
+        }
+    }
+    .swiper-slide {
+        &-active {
+            .works__items {
+                &::before, &::after {
+                    opacity: 1;
+                }
+                &::after {
+                    width: 50%;
+                    height: 50%;
+                }
+            }
+        }
+    }
+
+    .works__pagination  {
+        margin-top: 2rem;
+
+        .swiper-pagination-bullet {
+            background-color: var(--color__theme);
+            @include width-height(1rem, 1rem);
+            margin: 0 .5rem;
+        }
     }
 }
 /*--------------------------------------------------------------
@@ -264,8 +322,14 @@ main {
     padding: 10rem 0;
 
     .video__wrapper {
+        padding: 0 5.5rem;
         .swiper-slide {
             position: relative;
+            transition: all .3s;
+            opacity: 0;
+            &-active {
+                opacity: 1;
+            }
             &::before {
                 content: '';
                 padding-top: 56.25%;
@@ -281,7 +345,25 @@ main {
             }
         }
         .nav__controler {
-            position: relative;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 2;
+            width: 5rem;
+            border: 0;
+            background: white;
+            height: 5rem;
+            display: grid;
+            place-content: center;
+            padding: 0;
+            box-shadow: 0 0 .6rem rgba(#000, .3);
+            border-radius: 50%;
+            &.slide__prev {
+                left: 2.6rem;
+            }
+            &.slide__next {
+                right: 2.6rem;
+            }
         }
     }
 
@@ -297,13 +379,13 @@ main {
     padding: 10rem 0;
 
     .contacts__list {
-
+        margin-left: 5rem;
         li {
             display: flex;
             flex-wrap: wrap;
             gap: 2rem;
             & + li {
-                margin-top: 1rem;
+                margin-top: 1.5rem;
             }
             .icon {
                 flex: 0 0 5rem;

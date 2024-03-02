@@ -2,36 +2,75 @@
     [ ## Footer Start ]
 --------------------------------------------------------------*/
 footer {
-    // background-color: #10110c;
     position: relative;
     background-color: #10110c;
     background-blend-mode: overlay;
     background-size: cover;
     background-position: center;
 
+    .footer__top {
+        padding: 8rem 0 4rem;
+        p {
+            color: #7a7a7a;
+            font-size: 1.4rem;
+        }
+        .wiget__title {
+            color: #fff;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
 
+        ul {
+            li {
+                color: #7a7a7a;
+                font-size: 1.4rem;
+                & + li {
+                    margin-top: 1.5rem;
+                }
+
+                a {
+                    font-size: 1.4rem;
+                    transition: all .2s;
+                    &:hover {
+                        color: white;
+                    }
+                }
+            }
+        }
+
+        .working_hrs {
+            li {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+    }
     .footer__bottom {
-        padding: 1rem 0 2rem;
+        padding: 2rem 0;
         .footer__inner {
             padding: 1.5rem 2rem;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background-color: #1a9120;
+            background-color: var(--color__theme);
             border-radius: 4px;
             
         }
         p {
             color: white;
+            font-size: 1.4rem;
+            font-weight: 300;
         }
 
         .social {
             display: flex;
             gap: 1rem;
             a {
+                font-size: 1.4rem;
                 width: 4rem;
                 height: 4rem;
-                background-color: white;
+                background-color: #d0e1f1;
                 border-radius: 50%;
                 display: grid;
                 place-content: center;

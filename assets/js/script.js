@@ -62,10 +62,10 @@
         slidesPerView: 1.5,
         loop: 1,
         speed: 800,
-        autoplay:{
-            delay: 3000,
-        }, 
-        spaceBetween: 30,
+        // autoplay:{
+        //     delay: 3000,
+        // }, 
+        spaceBetween: 10,
 		pagination: {
 			el: ".works__pagination",
 			clickable: true,
@@ -73,15 +73,12 @@
 		breakpoints: {
 			576: {
 				slidesPerView: 2,
-				spaceBetween: 20,
 			},
 			992: {
 				slidesPerView: 3,
-				spaceBetween: 30,
 			},
 			1200: {
 				slidesPerView: 3.5,
-				spaceBetween: 50,
 			},
 		}
     });
@@ -109,12 +106,12 @@
     });
     var videoActionSlider = new Swiper('.video__wrapper.swiper', {
         slidesPerView: 1,
-        spaceBetween: 20,
+        spaceBetween: 0,
         loop: 1,
         speed: 800,
         navigation: {
-            nextEl: '.video__wrapper .slider__next',
-            prevEl: '.video__wrapper .slider__prev',
+            nextEl: '.video__wrapper .slide__next',
+            prevEl: '.video__wrapper .slide__prev',
           }
     });
 

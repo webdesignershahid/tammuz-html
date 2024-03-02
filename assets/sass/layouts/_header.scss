@@ -43,6 +43,7 @@
         .menu-item-has-submenu {
             position: relative;
             .sub-menu {
+                background-color: var(--color__white);
                 position: absolute;
                 top: 100%;
                 left: 0;
