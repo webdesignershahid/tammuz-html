@@ -19,7 +19,18 @@ footer {
             font-size: 2rem;
             margin-bottom: 2rem;
         }
-
+        .links {
+            a {
+                display: flex;
+                align-items: center;
+                gap: 1rem;
+                &:before {
+                    content: '\f185';
+                    font-family: "Font Awesome 5 Pro";
+                    font-weight: 600;
+                }
+            }
+        }
         ul {
             li {
                 color: #7a7a7a;
@@ -50,12 +61,14 @@ footer {
         padding: 2rem 0;
         .footer__inner {
             padding: 1.5rem 2rem;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
             background-color: var(--color__theme);
             border-radius: 4px;
-            
+            text-align: center;
+            @include md-up {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
         }
         p {
             color: white;
@@ -65,7 +78,12 @@ footer {
 
         .social {
             display: flex;
+            align-items: center;
+            justify-content: center;
             gap: 1rem;
+            @include md-down {
+                margin-top: 1rem;
+            }
             a {
                 font-size: 1.4rem;
                 width: 4rem;

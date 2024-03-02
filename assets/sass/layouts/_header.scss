@@ -6,11 +6,12 @@
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1024;
     transition: all 0.3s ease;
     padding: 1rem 0;
     background-color: var(--color__white);
     box-shadow: 0 0 .8rem rgba(#000, .1);
+    z-index: 1024;
+
     @include lg-up {
         padding: 2rem 0;
     }
@@ -106,17 +107,91 @@
     position: fixed;
     top: 0;
     height: 100%;
-    left: -36rem;
-    width: 35rem;
-    padding: 1rem;
+    left: -38rem;
+    width: 37rem;
+    padding: 2rem;
+    z-index: 1024;
     background-color: var(--color__white);
     box-shadow: 0 0 .6rem rgba(#000, .1);
     transition: all .2s ease-in-out;
-
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
     &.is-menu-open {
         left: 0;
     }
-    
+    .mobile-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .close-menu {
+        background-color: transparent;
+        border: 0;
+        padding: 0;
+    }
+    .menu {
+        margin: 2rem 0;
+    }
+    .main-menu {
+        > li {
+            border-bottom: .1rem solid rgba(#000, .1);
+            padding-bottom: 2rem;
+            & + li {
+                margin-top: 2rem;
+            }
+
+            a {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+        .sub-menu {
+            display: none;
+            padding-left: 1rem;
+            padding-top: .5rem;
+            a {
+                padding: .5rem;
+                margin: .5rem;
+                display: block;
+            }
+        }
+        .menu-item-has-submenu {
+            > a {
+                &::after {
+                    content: '\f078';
+                    font-family: "Font Awesome 5 Pro";
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+
+    h4 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        border-bottom: 0.1rem solid rgba(#000, .3);
+        padding-bottom: .5rem;
+    }
+    .menu-footer {
+        margin-top: auto;
+        .social-media {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .5rem;
+            a {
+                width: 4rem;
+                height: 4rem;
+                border-radius: 50%;
+                background-color: var(--color__theme);
+                color: var(--color__white);
+                display: grid;
+                place-content: center;
+                font-size: 1.4rem;
+            }
+        }
+    }
 }
 /*--------------------------------------------------------------
     [ ## Header  End]
