@@ -1551,6 +1551,38 @@ main {
   }
 }
 
+.org__chart {
+  margin: 10rem 0;
+}
+.org__chart .section__content .title {
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 3rem;
+}
+@media screen and (min-width: 576px) {
+  .org__chart .section__content .title {
+    font-size: 3.6rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .org__chart .section__content .title {
+    font-size: 4rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .org__chart .section__content .title {
+    font-size: 4.6rem;
+  }
+}
+.org__chart .section__content p + p {
+  margin-top: 2rem;
+}
+.org__chart .section__image {
+  margin-top: 5rem;
+  text-align: center;
+}
+
 .project__details {
   margin: 10rem 0;
 }
