@@ -112,3 +112,127 @@
         text-align: center;
     }
 }
+.mission__vision {
+    margin: 10rem 0;
+    overflow: hidden;
+    .row {
+        @include md-up {
+            --bs-gutter-x: 4rem;
+        }
+        @include lg-up {
+            --bs-gutter-x: 6rem;
+        }
+        @include xl-up {
+            --bs-gutter-x: 8rem;
+        }
+    }
+    .row-gap {
+        margin: 10rem 0;
+    }
+    .section__content {
+        .title {
+            font-size: 3rem;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 3rem;
+
+            @include sm-up {
+                font-size: 3.6rem;
+            }
+            @include lg-up {
+                font-size: 4rem;
+            }
+            @include xl-up {
+                font-size: 4.6rem;
+            }
+        }
+        p {
+            @include xl-up {
+                max-width: 40rem;
+            }
+            & + p {
+                margin-top: 2rem;
+            }
+        }
+    }
+    .section__image {
+        @include md-down {
+            margin-bottom: 2rem;
+
+        }
+        img {
+            @include md-down {
+                max-width: 40rem;
+            }   
+        }
+
+    }
+}
+
+.our__experts {
+    margin: 10rem 0;
+
+    .team__member {
+        background-color: #172000;
+        position: relative;
+        padding: 3rem;
+        z-index: 1;
+        border-radius: 1rem;
+        overflow: hidden;
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 60%;
+            background: var(--color__theme);
+            z-index: -1;
+            border-radius: 0 0 .4rem .4rem;
+            transition: all .5s ease;
+        }
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 40%;
+            background: var(--color__theme);
+            z-index: -1;
+            opacity: 0;
+            border-radius: .4rem .4rem 0 0;
+            transition: all .5s ease;
+        }
+
+        img {
+            width: 100%;
+            border-radius: .4rem;
+        }
+
+        .description {
+            color: white;
+            margin-bottom: 2rem;
+        }
+        .name {
+            font-size: 2.2rem;
+            font-weight: 600;
+            margin-bottom: .2rem;
+        }
+        .desg {
+            font-size: 1.4rem;
+            opacity: .5;
+            font-weight: 300;
+        }
+        &:hover {
+            &::before {
+                height: 40%;
+                opacity: 0;
+            }
+            &::after {
+                height: 50%;
+                opacity: 1;
+            }
+        }
+    }
+}
