@@ -1552,7 +1552,7 @@ main {
 }
 
 .project__details {
-  padding: 10rem 0;
+  margin: 10rem 0;
 }
 .project__details .description {
   margin-top: 3rem;
@@ -1587,14 +1587,18 @@ main {
 .project__details .description .key_info li + li {
   margin-top: 1rem;
 }
-.project__details .project_gallery {
-  margin-top: 10rem;
+
+.project_gallery {
+  margin: 10rem 0;
 }
-.project__details .project_gallery .section-title .title {
+.project_gallery .section-title .title {
   max-width: 100%;
 }
-.project__details .project_gallery .gallery_item img {
-  height: 30rem;
+.project_gallery .gallery_item {
+  height: 100%;
+}
+.project_gallery .gallery_item img {
+  height: 100%;
   width: 100%;
   object-fit: cover;
   object-position: center;

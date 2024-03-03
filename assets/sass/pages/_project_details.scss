@@ -1,5 +1,5 @@
 .project__details {
-    padding: 10rem 0;
+    margin: 10rem 0;
 
     .description {
         margin-top: 3rem;
@@ -36,23 +36,23 @@
         }
     }
 
-    .project_gallery {
-        margin-top: 10rem;
-
-        .section-title {
-            .title {
-                max-width: 100%;
-            }
+}
+.project_gallery {
+    margin: 10rem 0;
+    .section-title {
+        .title {
+            max-width: 100%;
         }
+    }
 
-        .gallery_item {
-            img {
-                height: 30rem;
-                width: 100%;
-                object-fit: cover;
-                object-position: center;
-                background-color: #eee;
-            }
+    .gallery_item {
+        height: 100%;
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            object-position: center;
+            background-color: #eee;
         }
     }
 }
