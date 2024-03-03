@@ -2,15 +2,20 @@
     padding: 10rem 0;
 
     .section__content {
-
         .title {
-            font-size: 4.6rem;
+            font-size: 3rem;
             font-weight: 600;
             line-height: 1.3;
             margin-bottom: 3rem;
 
-            @include md-down {
+            @include sm-up {
                 font-size: 3.6rem;
+            }
+            @include lg-up {
+                font-size: 4rem;
+            }
+            @include xl-up {
+                font-size: 4.6rem;
             }
         }
         p {
@@ -21,18 +26,35 @@
     }
 
     .section__image {
-        padding: 7rem 0 0 7rem;
+        padding: 3rem 0 0 3rem;
         position: relative;
         margin-top: 5rem;
+        @include sm-up {
+            padding: 5rem 0 0 5rem;
+        }
+        @include lg-up {
+            padding: 7rem 0 0 7rem;
+        }
         &::before {
             content: "";
             position: absolute;
             top: 0;
             left: 0;
-            right: 8rem;
-            bottom: 8rem;
-            border: 2rem solid var(--color__secondary);
+            right: 4rem;
+            bottom: 4rem;
+            border: 1rem solid var(--color__secondary);
             z-index: -1;
+
+            @include sm-up {
+                right: 6rem;
+                bottom: 6rem;
+                border-width: 1.5rem;
+            }
+            @include lg-up {
+                right: 8rem;
+                bottom: 8rem;
+                border-width: 2rem;
+            }
         }
     }
 }
@@ -40,11 +62,12 @@
 .certificates__wrapper {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 3rem;
+    gap: 2rem;
     @include sm-up {
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
     @include md-up {
+        gap: 3rem;
         grid-template-columns: repeat(4, minmax(0, 1fr));
     }
     @include xl-up {
@@ -52,6 +75,9 @@
     }
 
     .item {
-        border: 1rem solid var(--color__theme);
+        border: .5rem solid var(--color__theme);
+        @include lg-up {
+            border-width: 1rem;
+        }
     }
 }
